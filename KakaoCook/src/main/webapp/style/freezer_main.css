@@ -1,0 +1,991 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+body {
+  padding: 0; margin: 0;
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+#container{
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+/* Header */
+#main_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  box-shadow: 0px 20px 20px -28px gray;
+}
+#header_logo_section{
+  padding-left: 12px;
+}
+#header_menu_section ul{
+  display: flex;
+  padding: 0;
+}
+#header_menu_section li{
+  padding: 8px 12px;
+}
+#header_menu_section li a{
+  color: gray;
+}
+#header_menu_section li a:hover{
+  color: black;
+}
+#header_login_section{
+	width: 130px;
+  	padding: 8px 0px;
+  	padding-right: 10px;
+  	text-align: right;
+}
+#header_login_section > div{
+	text-align: right;
+  padding-bottom: 3px;
+  padding-right: 3px;
+}
+#header_login_section i:first-child{
+  padding-right: 5px;
+}
+#header_login_section a input{
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+  font-size: 10px;
+  border: none;
+  padding: 5px;
+}
+
+/* Contents */
+#main_section{
+	box-sizing: border-box;
+}
+#main_section .page{
+  width: 100%;
+  height: 100vh;
+}
+#freezer_wrap{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 10% 60% 30%;
+	grid-auto-columns: 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "freezer_header freezer_header"
+    "freezer_info_section freezer_list_section"
+    "freezer_recipe freezer_recipe";
+}
+#freezer_header{
+	grid-area: freezer_header;
+	padding-top: 40px;
+}
+#freezer_info_section{
+	grid-area: freezer_info_section;
+	background-image: url("../images/freezerinfo.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-top: 50px;
+}
+#freezer_info_section #shelf_life_section ul{
+	padding-left: 60px;
+    padding-top: 5px;
+}
+#freezer_info_section #shelf_life_section li{
+	padding-bottom: 4px;
+}
+#freezer_info_section #shelf_life_section li p{
+	display: inline;
+	font-size: 14px;
+}
+#freezer_info_section #shelf_life_section li a{
+	display: none;
+}
+#freezer_info_section #shelf_life_section li:hover .shelfDelBtn{
+	display: inline;
+	font-size: 12px;
+	color: gray;
+}
+#freezer_info_section #shelf_life_section li .life_end{
+	color: red;
+	cursor: pointer;
+}
+#freezer_info_section #shelf_life_section li .life_today{
+	color: #71A860;
+}
+#freezer_info_section #shelf_life_section li .life_warning{
+	color: orange;
+}
+#freezer_info_section #shelf_life_section img{
+	width: 100%;
+}
+#freezer_info_nonlogin{
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/opaque_freezerinfo.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	border-radius: 20px;
+}
+#freezer_info_nonlogin a{
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#freezer_info_nonlogin input{
+	width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    background-color: #FFCD00;
+}
+#shelf_life_section{
+	width: 348px;
+	height: 200px;
+	overflow: auto;
+}
+#bookmarked_recipe_wrap{
+	padding-left: 20px;
+    padding-top: 50px;
+}
+#bookmarked_recipe_section{
+	width: 96%;
+	height: 220px;
+}
+#bookmarked_recipe_wrap h3{
+	font-size: 16px;
+	margin: 0;
+    margin-top: 10px;
+}
+#bookmarked_recipe_section{
+	overflow: auto;
+}
+#bookmarked_recipe_section ul{
+	padding: 0;
+	padding-left: 15px;
+}
+#bookmarked_recipe_section ul li{
+	width: 75px;
+	padding: 0;
+	padding-right: 4px;
+	padding-bottom: 10px;
+    display: inline-block;
+    position: relative;
+}
+#bookmarked_recipe_section ul li > .bookmark_delBtn{
+	display: none;
+	position: absolute;
+	top: -8px;
+    right: -4px;
+    font-size: 14px;
+    color: red;
+}
+#bookmarked_recipe_section ul li:hover > .bookmark_delBtn{
+	display: inline-block;
+}
+#bookmarked_recipe_section .bookmark_image_section{
+	width: 100%;
+	height: 75px;
+}
+#bookmarked_recipe_section .bookmark_image_section img{
+	width: 100%;
+	height: 90%;
+}
+#bookmarked_recipe_section .bookmark_recipe_caption .bookmark_recipe_name{
+	text-align: center;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#freezer_list_section{
+	grid-area: freezer_list_section;
+	position: relative;
+	background-image: url("../images/freezerbody.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 20px;
+}
+#freezer_list_section #freezer_list_header{
+	width: 100%;
+	height: 10%;
+	position: relative;
+}
+#freezer_list_section #freezer_list_header #freezer_form{
+	position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+}
+#freezer_list_section #freezer_list_header #freezer_form .freezer_form_label_contents{
+	display: inline-block;
+	width: 60px;
+	height: 70px;
+}
+#freezer_list_section #freezer_list_header #freezer_form input[type="radio"]{
+	display: none;
+}
+#freezer_list_section #freezer_list_header #freezer_form input[type="radio"]:checked + label{
+	font-weight: bolder;
+	background-color: #FFCD00; 
+}
+#freezer_list_section #freezer_list_header #freezer_form label{
+	margin: 0 5px;
+	cursor: pointer;
+	margin: 0;
+}
+#freezer_list_section #freezer_list_header #freezer_form label img{
+    width: 46px;
+    height: 40px;
+}
+#freezer_list_section #freezer_list_header #freezer_form label p{
+	display: inline;
+	padding: 0;
+	font-size: 13px;
+}
+#freezer_list_section #freezer_list_table{
+	width: 100%;
+	height: 90%;
+	position: relative;
+}
+#freezer_list_section #freezer_list_table table{
+	width: 90%;
+    border-collapse: collapse;
+    border: none;
+    margin-top: 40px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+#freezer_list_section #freezer_list_table table th{
+	position: relative;
+}
+#freezer_list_section #freezer_list_table table th #freezer_sort{
+	position: absolute;
+    right: 0;
+    bottom: 1px;
+}
+#freezer_list_section #freezer_list_table table th #freezer_sort select{
+    height: 28px;
+    width: 90px;
+    text-align: center;
+    background: #00000090;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    border: 1px solid gray;
+    color: white;
+}
+#freezer_list_section #freezer_list_table table tr{
+	background-image: url("../images/freezerlist.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#freezer_list_section #freezer_list_table table #f_list_table_header{
+	background-image: url("../images/freezerheader.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#freezer_list_section #freezer_list_table table #f_list_table_footer{
+	background-image: url("../images/freezerfooter.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#freezer_list_section #freezer_list_table table tr{
+    height: 30px;
+}
+#freezer_list_section #freezer_list_table table td{
+    font-size: 14px;
+    text-overflow: ellipsis;
+	overflow: hidden;
+	/* white-space: nowrap; */
+}
+#freezer_list_section #freezer_list_table table th:nth-child(1){
+    width: 16%;
+}
+#freezer_list_section #freezer_list_table table th:nth-child(2){
+    width: 17%;
+}
+#freezer_list_section #freezer_list_table table th:nth-child(3){
+    width: 17%;
+}
+#freezer_list_section #freezer_list_table table th:nth-child(4){
+    width: 17%;
+}
+#freezer_list_section #freezer_list_table table th:nth-child(5){
+    width: 36%;
+}
+#freezer_list_section #freezer_list_table table td:nth-child(1){
+    padding-left: 6px;
+}
+#freezer_list_section #freezer_list_table table td:nth-child(2){
+    padding-left: 6px;
+}
+#freezer_list_section #freezer_list_table table td:nth-child(3){
+    text-align: center;
+}
+#freezer_list_section #freezer_list_table table td:nth-child(4){
+    text-align: center;
+}
+#freezer_list_section #freezer_list_table table td:nth-child(2) input[type="number"]{
+    width: 40px;
+    text-align: center;
+}
+#freezer_list_section #freezer_list_table table #recipeBtn{
+    display: none;
+    cursor: pointer;
+    height: 27px;
+    width: 87px;
+    text-align: center;
+    background: #00000090;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    border: 1px solid gray;
+    color: white;
+}
+#freezer_list_section #freezer_list_table table #searchBtn{
+    display: none;
+    cursor: pointer;
+    height: 27px;
+    width: 65px;
+    text-align: center;
+    background: #00000090;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    border: 1px solid gray;
+    color: white;
+}
+#freezer_list_section #freezer_list_table table tr:hover #recipeBtn{
+	display: inline;
+}
+#freezer_list_section #freezer_list_table table tr:hover #searchBtn{
+	display: inline;
+}
+
+#freezer_list_section #freezer_list_table table #storageBtn:hover #storage_method{
+	display: inline-block;
+}
+
+#freezer_list_section #freezer_list_table table .freezerDelBtn{
+	display: none;
+}
+#freezer_list_section #freezer_list_table table tr:hover .freezerDelBtn{
+	display: inline;
+}
+#freezer_list_section #freezer_list_table table #storage_method{
+	display: none;
+	position: absolute;
+    width: 168px;
+    padding: 5px;
+    min-height: 16px;
+    border: 1px solid black;
+    background: white;
+}
+#freezer_list_section #freezer_list_table table tr:hover #storage_method{
+	display: inline-block;
+}
+#freezer_paging_section{
+	position: absolute;
+	bottom: 2px;
+    width: 100%;
+    text-align: center;
+}
+#freezer_paging_section ul{
+	padding: 0;
+}
+#freezer_list_nonlogin{
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/opaque_freezer.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	border-radius: 20px;
+}
+#freezer_list_nonlogin a{
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#freezer_list_nonlogin input{
+	width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    background-color: #FFCD00;
+}
+#freezer_recipe{
+	grid-area: freezer_recipe;
+	padding-top: 30px;
+	width: 100%;
+  	height: 100%;
+}
+#freezer_recipe .bx-wrapper{
+	margin: 0 auto;
+	height: 100%;
+	margin-top: 32px;
+	position: relative;
+}
+#freezer_recipe .bx-viewport{
+ 	height: 100%;
+}
+#freezer_recipe .slider2{
+	height: 100%;
+}
+#freezer_recipe .slider2_content{
+	height: 100%;
+}
+#freezer_recipe h3{
+	margin: 0;
+}
+#freezer_recipe .recipe_image_section{
+	width: 100%;
+	position: relative;
+}
+#freezer_recipe .recipe_image_section::after{
+ 	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+#freezer_recipe .recipe_image_section img{
+ 	position:absolute;
+	width: 100%;
+	height: 100%;
+}
+#freezer_recipe .recipe_caption{
+	height: 18%;
+	padding: 0 5px;
+}
+#freezer_recipe .recipe_caption_title{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#freezer_recipe .recipe_caption_info{
+	font-size: 12px;
+}
+#freezer_recipe .recipe_caption_info_star img{
+	width: 12px;
+	height: 12px;
+}
+#freezer_recipe .recipe_caption_info_rCnt{
+	float: right;
+	vertical-align: middle;
+}
+#freezer_recipe i{
+	display: none;
+}
+#freezer_recipe .bx-controls-direction{
+	font-size: 100px;
+}
+#freezer_recipe .bx-controls-direction a{
+	position: absolute;
+	top: 30%;
+	display: block;
+	width: 100px; height: 110px;
+	overflow: hidden;
+	transform: translateY(-50%);
+	color: #5a5a5a;
+}
+#freezer_recipe .bx-prev{
+	left: -100px;
+}
+#freezer_recipe .bx-next{
+	right: -100px;
+}
+#freezer_recipe .bx-prev::before{
+	content: "\e93d";
+	font-family: 'xeicon';
+}
+#freezer_recipe .bx-next::before{
+	content: "\e940";
+	font-family: 'xeicon';
+}
+#grocery_main{
+	width: 100%;
+	height: 100%;
+	display: grid; 
+	grid-template-columns: 50% 50%; 
+	grid-template-rows: 20% 80%; 
+	gap: 0px 0px; 
+	grid-template-areas: 
+    "grocery_header grocery_header"
+    "grocery_wrap grocery_wrap"; 
+}
+#grocery_header{
+	grid-area: grocery_header;
+	position: relative;
+}
+#grocery_wrap{
+	grid-area: grocery_wrap;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 100%;
+	grid-auto-columns: 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "grocery_list grocery_list grocery_list grocery_cart";
+}
+#grocery_wrap #grocery_list{
+	grid-area: grocery_list;
+	border: 2px solid #FFCD00;
+	border-right: none;
+	position: relative;
+	height: 112%;
+}
+#grocery_wrap #grocery_list #grocery_list_header{
+	height: 40px;
+    background-color: #FFCD00;
+    position: relative;
+}
+#grocery_wrap #grocery_list #grocery_list_header > button{
+    border: none;
+    height: 40px;
+    width: 130px;
+    position: absolute;
+    top: -42px;
+    left: -2px;
+    background-color: #FFCD00;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+#grocery_wrap #grocery_list #grocery_list_header form{
+	float: right;
+	line-height: 35px;
+}
+#grocery_wrap #grocery_list #grocery_list_header form select{
+    height: 30px;
+    border: none;
+    width: 90px;
+    text-align: center;
+}
+#grocery_wrap #grocery_list #grocery_list_header #select_box{
+    float: right;
+    line-height: 38px;
+    margin-right: 8px;
+}
+#grocery_wrap #grocery_list #grocery_list_header #select_box button{
+    height: 30px;
+    border: none;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #EF9A22;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#grocery_wrap #grocery_list li{
+	width: 20%;
+    padding-top: 15px;
+    display: inline-block;
+	margin-right: 20px;
+}
+#grocery_header #search_wrap{
+	position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+#grocery_header #search_wrap{
+	background-color: #EEEEEE;
+	height: 30px;
+	border-radius: 30px;
+	padding: 10px;
+}
+#grocery_header #search_bar {
+	width: 300px;
+	padding: 0px 10px;
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	color: black;
+	font-size: 16px;
+	line-height: 30px;
+	font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#grocery_header #search_btn{
+	width: 30px; height: 30px;
+	border-radius: 50%;
+	color: #371d1e;
+	background: #FFCD00;
+	float: right; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#grocery_header #type_form{
+	position: absolute;
+	left: 50%;
+    bottom: -22%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    text-align: center;
+}
+#grocery_header #search_result{
+	position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#grocery_header #search_result p{
+	font-size: 24px;
+	margin: 0;
+}
+#grocery_header #search_result button{
+    border: none;
+    height: 30px;
+    width: 80px;
+    margin-top: 8px;
+    background-color: #FFCD00;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#grocery_header #type_form .grocery_form_label_contents{
+	display: inline-block;
+	width: 60px;
+	height: 70px;
+	margin: 0 10px;
+	text-align: center;
+}
+#grocery_header #type_form input[type="radio"]{
+	display: none;
+}
+#grocery_header #type_form input[type="radio"]:checked + label .grocery_form_label_contents_title{
+	font-weight: bolder;
+	background-color: #FFCD00; 
+}
+#grocery_header #type_form label{
+	margin: 0 5px;
+	cursor: pointer;
+	margin: 0;
+}
+#grocery_header #type_form label .grocery_form_label_contents_img{
+    width: 100%;
+    height: 55px;
+}
+#grocery_header #type_form label img{
+    width: 100%;
+    height: 100%;
+}
+#grocery_header #type_form label p{
+	display: inline;
+	padding: 0;
+	font-size: 13px;
+}
+#grocery_wrap{
+	margin-top: 30px;
+}
+#grocery_wrap #grocery_list .grocery_image_section{
+	text-align: center;
+	position: relative;
+	height: 120px;
+}
+#grocery_wrap #grocery_list .grocery_image_section img{
+	width: 80%;
+	height: 80%;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#grocery_wrap #grocery_list .grocery_banned_image_section{
+	text-align: center;
+	position: relative;
+	height: 170px;
+}
+#grocery_wrap #grocery_list .grocery_banned_image_section img:first-child{
+	height: 60%;
+    width: 80%;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#grocery_wrap #grocery_list .grocery_banned_image_section img:last-child{
+	height: 100%;
+    width: 100%;
+    opacity: 0.8;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#grocery_wrap #grocery_list .grocery_image_section .select_checkbox{
+	position: absolute;
+    left: 0%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+}
+#grocery_wrap #grocery_list .grocery_hover_info{
+    background-color: white;
+    border: 2px solid #FFCD00;
+    display: none;
+    position: absolute;
+    left: -11px;
+    top: 95%;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+    padding-right: 16px;
+    z-index: 10;
+}
+#grocery_wrap #grocery_list .grocery_hover_info h3, p{
+	padding-left: 20px;
+}
+#grocery_wrap #grocery_list .grocery_hover_info p{
+	font-size: 12px;
+}
+#grocery_wrap #grocery_list .grocery_image_section img:hover + .grocery_hover_info{
+	display: block;
+}
+#grocery_wrap #grocery_list .grocery_caption{
+    margin-top: 10px;
+    text-align: center;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_add input:first-child{
+    width: 72%;
+    height: 30px;
+    display: inline-block;
+    border: none;
+    background-color: #FFCD00;
+    color: #371d1e;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    cursor: pointer;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_add input:last-child{
+    width: 25%;
+    height: 26px;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    text-align: center;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_manage{
+    width: 100%;
+    display: flex;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_manage button:first-child{
+    width: 50%;
+    height: 20px;
+    border: none;
+    background-color: #371d1e;
+    color: white;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    cursor: pointer;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_manage button:last-child{
+    width: 50%;
+    height: 20px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    cursor: pointer;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_caption_name{
+    width: 100%;
+    display: inline-block;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_caption_name b{
+	font-size: 17px;
+	float: left;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_caption_name span{
+	font-size: 15px;
+    float: right;
+    line-height: 20px;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_caption_info{
+	display: inline-block;
+    float: right;
+}
+#grocery_wrap #grocery_list .grocery_caption .grocery_caption_info input{
+	width: 40px;
+	height: 19px;
+	border: 1px solid grey;
+}
+#grocery_wrap #grocery_list #nonList{
+	text-align: center;
+    line-height: 650px;
+}
+#grocery_wrap #grocery_list #paging_section{
+	position: absolute;
+    bottom: 0;
+    left: 50%;
+	text-align: center;
+}
+#grocery_wrap #grocery_list #paging_section ul{
+	padding: 0px;
+}
+#grocery_wrap #grocery_list #paging_section li{
+	display: inline;
+	margin: 0;
+}
+#grocery_wrap #grocery_list #paging_section li span{
+	color: #FFCD00;
+}
+#grocery_wrap #grocery_cart{
+	border: 2px solid #FFCD00;
+	grid-area: grocery_cart;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 112%;
+}
+#grocery_wrap #grocery_cart #grocery_cart_header{
+    background-color: #FFCD00;
+    text-align: center;
+    height: 40px;
+}
+#grocery_wrap #grocery_cart #grocery_cart_header h3{
+	margin: 0px;
+	line-height: 40px;
+}
+#grocery_wrap #grocery_cart #grocery_cart_main{
+	height: 100%;
+}
+#grocery_wrap #grocery_cart #grocery_cart_main #cart_content li{
+	list-style: decimal;
+	margin-bottom: 5px;
+}
+#grocery_wrap #grocery_cart #grocery_cart_main #cart_content li input[type="number"]{
+	width: 40px;
+	margin-left: 10px;
+	border: 1px solid grey;
+}
+input[type=number]::-webkit-inner-spin-button{
+    opacity:1;
+} 
+#grocery_wrap #grocery_cart #grocery_cart_main #cart_content li i{
+	font-size: 12px;
+	color: grey;
+}
+#grocery_wrap #grocery_cart #grocery_cart_main #cart_content li .deleteBtn{
+	display: none;
+}
+#grocery_wrap #grocery_cart #grocery_cart_main #cart_content li:hover .deleteBtn{
+	display: inline;
+}
+#grocery_wrap #grocery_cart #grocery_cart_footer{
+    text-align: center;
+    height: 80px;
+    position: relative;
+}
+#grocery_wrap #grocery_cart #grocery_cart_footer input[type="submit"]{
+    position: absolute;
+    left: 50%;
+    bottom: -17px;
+    transform: translate(-50%, -50%);
+    height: 60px;
+    width: 92%;
+    border: none;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #FFCD00;
+    box-shadow: 0px 20px 20px -19px grey;
+}
+
+/* Footer */
+#main_footer{
+  height: 150px;
+  padding: 50px 0;
+  margin-top: 200px;
+  color: #4b4c4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main_footer #footer_list{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#main_footer .footer_list_contents{
+  display: inline-block;
+  text-align: center;
+}
+#main_footer p {
+  font-size: 14px;
+}
+#main_footer ul {
+  line-height: 1.6;
+  font-size: 12px;
+  padding-left: 0px;
+}
+#main_footer ul a {
+  opacity: 0.8;
+}
+#main_footer ul a:hover {
+  opacity: 1;
+}
+#main_footer .social {
+  /* text-align: right; */
+}
+#main_footer .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-top: 22px;
+  color: inherit;
+  opacity: 0.75;
+}
+#main_footer .social > a:hover {
+  opacity: 0.9;
+}
+#main_footer #copyright {
+  line-height: 1.6;
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.6;
+}
+/* Top버튼 */
+#top_button{
+  position: fixed;
+  right: 20px; bottom: 20px;
+}
+#top_button i{
+  font-size: 30px;
+  color: #FFCD00;
+}
+

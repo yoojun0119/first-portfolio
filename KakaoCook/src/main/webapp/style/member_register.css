@@ -1,0 +1,174 @@
+@charset "UTF-8";
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+body {
+  padding: 0; margin: 0;
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+  background-color: #F5F6F7;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+#container{
+  max-width: 1024px;
+  height: 100vh;
+  position: absolute;
+  left: 50%; top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+/* Header */
+#header_logo_section{
+  text-align: center;
+
+}
+
+/* Contents */
+#main_section{
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+#main_section #sign_up_section table{
+  width: 400px;
+}
+#main_section #sign_up_section td{
+  font-size: 14px;
+  width: 100%;
+}
+#main_section #sign_up_section input, select{
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#main_section #sign_up_section td > input{
+  outline: none;
+  border: 1px solid lightgray;
+  width: 400px; height: 40px;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+#main_section #sign_up_section #idInputSection{
+  width: 300px; height: 40px;
+}
+#main_section #sign_up_section #idInputSection ~ input{
+  width: 96px;
+  padding: 0;
+}
+#main_section #sign_up_section input[type="password"]{
+  outline: none;
+  border: 1px solid lightgray;
+  display: flex;
+}
+#main_section #sign_up_section select{
+  outline: none;
+  border: 1px solid lightgray;
+  width: 32.5%; height: 40px;
+  margin-bottom: 8px;
+	padding-left: 10px;
+}
+#main_section #sign_up_section #sex{
+  outline: none;
+  width: 400px;
+  height: 40px;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+}
+#main_section #sign_up_section #address{
+	width: 400px;
+}
+#main_section #sign_up_section #address input{
+  outline: none;
+  border: 1px solid lightgray;
+  width: 97px; height: 40px;
+  box-sizing: border-box;
+}
+#main_section #sign_up_section #address input[type="text"]{
+  width: 198px; height: 40px;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+}
+#main_section #sign_up_section #address #sample4_postcode{
+  width: 97px;
+}
+#main_section #sign_up_section #submit_button{
+  width: 400px; height: 50px;
+  border: none;
+  margin-top: 8px;
+  padding: 0;
+  cursor: pointer;
+  background-color: #FFCD00;
+  color: #371D1E;
+  font-size: 16px;
+  font-weight: bolder;
+}
+#main_section #sign_up_section #cancel_button{
+  width: 400px; height: 50px;
+  border: none;
+  margin-top: 8px;
+  padding: 0;
+  cursor: pointer;
+  background-color: lightgray;
+  color: #371D1E;
+  font-size: 16px;
+  font-weight: bolder;
+}
+#checkPw, #checkNum {
+  font-size: 10px;
+  height: 16px;
+  line-height: 16px;
+  padding-left: 5px;
+}
+
+/* Footer */
+#main_footer{
+  height: 150px;
+  padding: 50px 0;
+  color: #4b4c4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main_footer #footer_list{
+  text-align: center;
+}
+#main_footer .social > a {
+  font-size:15px;
+  width:30px;
+  height:30px;
+  margin: 0 5px;
+  line-height:30px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin-top:22px;
+  color:inherit;
+  opacity:0.75;
+}
+#main_footer .social > a:hover {
+  opacity:0.9;
+}
+#main_footer #copyright {
+  line-height: 1.6;
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.6;
+}

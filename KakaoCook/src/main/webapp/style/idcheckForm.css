@@ -1,0 +1,75 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+body {
+  padding: 0; margin: 0;
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+  box-sizing: border;
+  background-color: #F5F6F7;
+}
+#input_section{
+	width: 260px;
+	position: absolute;
+	left: 50%; top: 30%;
+ 	transform: translate(-50%, -50%);
+	text-align: center;
+}
+#input_section{
+}
+#input_section input{
+	outline: none;
+	font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+	border: 1px solid lightgray;
+}
+#input_section input[type="text"]{
+	height: 19px;
+	padding: 3px 4px;
+	
+}
+#input_section input[type="submit"]{
+	height: 25px;
+	padding: 2px 10px;
+	border: none;
+	cursor: pointer;
+ 	background-color: #FFCD00;
+	color: #371D1E;
+}
+#description{
+	width: 260px;
+	position: absolute;
+	left: 50%; top: 60%;
+ 	transform: translate(-50%, -40%);
+}
+#description p{
+	font-size: 10px;
+}
+#description_check_msg{
+	text-align: center;
+}
+#description_check_msg a{
+	font-size: 14px;
+}
+#description_check_msg #msg1{
+	color: blue;
+	font-size: 14px;
+}
+#description_check_msg #msg2{
+	color: red;
+	font-size: 14px;
+}
+#description_check_msg input{
+	cursor: pointer;
+	border: 1px solid lightgray;
+    font-size: 11px;
+}

@@ -1,0 +1,577 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+body {
+  padding: 0; margin: 0;
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+#container{
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+/* Header */
+#main_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  box-shadow: 0px 20px 20px -28px gray;
+}
+#header_logo_section{
+  padding-left: 12px;
+}
+#header_menu_section ul{
+  display: flex;
+  padding: 0;
+}
+#header_menu_section li{
+  padding: 8px 12px;
+}
+#header_menu_section li a{
+  color: gray;
+}
+#header_menu_section li a:hover{
+  color: black;
+}
+#header_login_section{
+	width: 130px;
+  	padding: 8px 0px;
+  	padding-right: 10px;
+  	text-align: right;
+}
+#header_login_section > div{
+	text-align: right;
+  padding-bottom: 3px;
+  padding-right: 3px;
+}
+#header_login_section i:first-child{
+  padding-right: 5px;
+}
+#header_login_section a input{
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+  font-size: 10px;
+  border: none;
+  padding: 5px;
+}
+
+/* Contents */
+#main_section{
+
+}
+#main_section .page{
+  width: 100%;
+  /* height: 100vh; */
+}
+#main_section .page > h1{
+	font-size: 28px;
+	margin-top: 50px;
+	text-align: center;
+}
+#main_section .page table{
+	border: none;
+	border-collapse: collapse;
+}
+#main_section .page table td{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	border: 1px solid #ECE7E7;
+}
+#main_section .page table th:last-child{
+	padding: 0;
+}
+#main_section .page table td:last-child{
+	padding: 0;
+}
+#main_section .page table td:not(#admin_list_table td:last-child):last-child{
+	border: none;
+}
+#main_section .page table td input[type="button"]{
+	box-sizing: border-box;
+	width: 45%;
+	height: 100%;
+	margin: 0;
+	cursor: pointer;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    border: 1px solid lightgray;
+}
+#main_section .page table td input[type="button"]:first-child{
+	background-color: #DFDFDF;
+}
+#main_section .page table td input[type="button"]:last-child{
+	background-color: #BFBFBF;
+}
+#main_section .page .paging{
+	text-align: center;
+}
+#main_section .page .paging ul{
+	padding: 0;
+}
+#main_section .page .paging ul li{
+	display: inline;
+}
+#main_section .page .paging ul li span#m_paging{
+	color: #FFCD00;
+}
+#main_section .page .paging ul li span#r_paging{
+	color: #6EC7B9;
+}
+#main_section .page .paging ul li span#g_paging{
+	color: #88CE62;
+}
+#member_wrap{
+	height: 500px;
+	margin-top: 50px;
+	border-top: 2px dotted gray;
+	display: grid;
+	grid-template-columns: 45% 55%;
+	grid-template-rows: 30% 70%;
+	grid-auto-columns: 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "admin_manage_section member_info_section"
+    "user_manage_section member_info_section"
+}
+#member_wrap table{
+	width: 100%;
+	text-align: center;
+}
+#member_wrap table tr:first-child{
+    height: 35px;
+	background-color: #FFCD00;
+}
+#member_wrap #admin_manage_section{
+	grid-area: admin_manage_section;
+}
+#member_wrap #admin_manage_section #admin_list{
+	height: 100%;
+}
+#member_wrap #admin_manage_section #admin_list_table{
+	height: calc(100% - 48px);
+	overflow: auto;
+}
+#member_wrap #admin_manage_section #admin_list_table td:last-child{
+	position: relative;
+}
+#member_wrap #admin_manage_section #admin_list_table span{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#member_wrap #admin_manage_section #admin_list_table input{
+    font-size: 8px;
+    width: 50px;
+    position: absolute;
+    right: -26px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+}
+#member_wrap #user_manage_section{
+	grid-area: user_manage_section;
+}
+#member_wrap #user_manage_section #user_list_header{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#member_wrap #user_manage_section #user_list_header #user_function{
+	display: flex;
+}
+#member_wrap #member_info_section{
+	grid-area: member_info_section;
+}
+#member_wrap #member_info_section > div{
+	text-align: center;
+}
+#member_wrap #member_info_section #member_info_chart1 div:first-child{
+	margin-right: 30px;
+}
+#member_wrap #member_info_section .member_chart{
+	display: inline-block;
+}
+#member_wrap #member_info_section .member_chart h1{
+	margin-bottom: 8px;
+}
+#member_wrap #member_info_section .sexChart{
+	position: relative;
+	display: inline-block;
+}
+#member_wrap #member_info_section .sexChart span{
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 28px;
+    font-weight: bold;
+}
+#member_wrap #member_info_section .sexChart span small{
+	font-size: 18px;
+}
+#member_wrap #member_info_section #ageChart{
+	width: 500px;
+	height: 250px;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+	font-size: 12px;
+}
+#member_wrap #member_info_section #ageChart path{
+	cursor: pointer;
+}
+#recipe_wrap{
+	height: 1000px;
+	margin-top: 50px;
+	border-top: 2px dotted #6EC7B9;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 50% 50%;
+	grid-auto-columns: 1fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "recipe_list"
+    "recipe_info"
+}
+#recipe_wrap #recipe_list{
+	grid-area: recipe_list;
+}
+#recipe_wrap #recipe_list #recipe_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#recipe_list #recipe_function{
+	display: flex; 
+}
+.showAllBtn{
+	width: 70px;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    text-align: center;
+    background: #FFCD00;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    cursor: pointer;
+}
+#m_sort{
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    text-align: center;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#r_sort{
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    text-align: center;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#g_sort{
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    text-align: center;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+}
+.each_contents_text h3, input{
+	display: inline-block;
+}
+.each_contents_text .insertBtn{
+	border-radius: 10px;
+    border: 1px solid lightgray;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+    cursor: pointer;
+}
+.each_contents_text .insertBtn i{
+	color: orange;
+}
+#search_wrap{
+    background-color: #ebebeb;
+    height: 16px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 6px;
+    display: inline-block;
+}
+#search_bar {
+    width: 100px;
+    padding: 0px 10px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    color: black;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#user_list_header #search_bar{
+	width: 60px;
+    padding: 0px 10px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    color: black;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Pretendard-Regular', '나눔스퀘어', serif;
+}
+#search_btn{
+	width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: #371d1e;
+    background: #FFCD00;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#search_btn i{
+	font-size: 10px;
+}
+#recipe_wrap #recipe_list #recipe_header #recipe_text span{
+    color: #60AEA0;
+}
+#recipe_wrap #recipe_list #recipe_header input[type="button"]{
+    display: inline-block;
+}
+#recipe_wrap #recipe_list #recipe_header form{
+    display: inline-block;
+}
+#recipe_wrap #recipe_list > table{
+	width: 100%;
+	text-align: center;
+}
+#recipe_wrap #recipe_list > table tr:first-child{
+    height: 35px;
+	background-color: #6EC7B9;
+}
+#recipe_wrap #recipe_list > table tr:not(tr:first-child):hover{
+	background-color: lightgray;
+}
+#recipe_wrap #recipe_list > table tr td > a:hover{
+	font-weight: bold;
+}
+#recipe_wrap #recipe_info{
+	grid-area: recipe_info;
+}
+#recipe_wrap #recipe_info #recipe_chart{
+	width: 100%;
+	height: 80%;
+}
+#recipe_wrap #recipe_info #recipe_chart_info{
+	width: 100%;
+	height: 20%;
+	text-align: center;
+    margin-top: 50px;
+}
+#grocery_wrap{
+	height: 500px;
+	margin-top: 50px;
+	border-top: 2px dotted #88CE62;
+	display: grid;
+	grid-template-columns: 55% 44%;
+	grid-template-rows: 100%;
+	grid-auto-columns: 1fr;
+	gap: 0px 10px;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "grocery_list grocery_info"
+}
+#grocery_wrap #grocery_list{
+	grid-area: grocery_list;
+}
+#grocery_wrap #grocery_list #grocery_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#grocery_wrap #grocery_list #grocery_header #grocery_text span{
+    color: #5FA657;
+}
+#grocery_wrap #grocery_list #grocery_header input[type="button"]{
+    display: inline-block;
+}
+#grocery_wrap #grocery_list #grocery_header form{
+    display: inline-block;
+}
+#grocery_list #grocery_function{
+	display: flex; 
+}
+#grocery_wrap #grocery_list > table{
+	width: 100%;
+	text-align: center;
+}
+#grocery_wrap #grocery_list > table tr:first-child{
+    height: 35px;
+    background-color: #88CE62;
+}
+#grocery_wrap #grocery_info table{
+	width: 100%;
+	text-align: center;
+}
+#grocery_wrap #grocery_list > table tr:not(tr:first-child, .sold_out_text, .out_of_shelf_life_text, .both_out_text):hover{
+	background-color: lightgray;
+}
+#grocery_wrap #grocery_list > table tr.sold_out_text{
+	background-color: #FF951890;
+}
+#grocery_wrap #grocery_list > table tr.sold_out_text td:last-child{
+	background-color: white;
+}
+#grocery_wrap #grocery_list > table tr.sold_out_text:hover{
+	background-color: #DC7B1490;
+}
+#grocery_wrap #grocery_list > table tr.out_of_shelf_life_text{
+	background-color: #BD2D2D90;
+}
+#grocery_wrap #grocery_list > table tr.out_of_shelf_life_text td:last-child{
+	background-color: white;
+}
+#grocery_wrap #grocery_list > table tr.out_of_shelf_life_text:hover{
+	background-color: #99242490;
+}
+#grocery_wrap #grocery_list > table tr.both_out_text{
+	background-color: #630202c2;
+}
+#grocery_wrap #grocery_list > table tr.both_out_text td:last-child{
+	background-color: white;
+}
+#grocery_wrap #grocery_list > table tr.both_out_text:hover{
+	background-color: #460101c2;
+}
+#grocery_wrap #grocery_info{
+	grid-area: grocery_info;
+}
+#grocery_wrap #grocery_info table{
+	font-size: 14px;
+}
+#grocery_wrap #grocery_info #grocery_info_soldout_section{
+	max-height: 50%;
+}
+#grocery_wrap #grocery_info #grocery_info_soldout_section > h3{
+	text-align: right;
+	color: #FF9518;
+}
+#grocery_wrap #grocery_info #grocery_info_soldout_section #soldout_table tr:first-child{
+	background-color: #FF951890;
+}
+#grocery_wrap #grocery_info #grocery_info_soldout_section #soldout_table{
+	max-height: 80%;
+	overflow: auto;
+}
+#grocery_wrap #grocery_info #grocery_info_shelf_life_section{
+	max-height: 50%;
+}
+#grocery_wrap #grocery_info #grocery_info_shelf_life_section > h3{
+	text-align: right;
+	color: #BD2D2D;
+}
+#grocery_wrap #grocery_info #grocery_info_shelf_life_section #shelfout_table{
+	max-height: 80%;
+	overflow: auto;
+}
+#grocery_wrap #grocery_info #grocery_info_shelf_life_section #shelfout_table tr:first-child{
+	background-color: #BD2D2D90;
+}
+
+/* Footer */
+#main_footer{
+  height: 150px;
+  padding: 50px 0;
+  margin-top: 200px;
+  color: #4b4c4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main_footer #footer_list{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#main_footer .footer_list_contents{
+  display: inline-block;
+  text-align: center;
+}
+#main_footer p {
+  font-size: 14px;
+}
+#main_footer ul {
+  line-height: 1.6;
+  font-size: 12px;
+  padding-left: 0px;
+}
+#main_footer ul a {
+  opacity: 0.8;
+}
+#main_footer ul a:hover {
+  opacity: 1;
+}
+#main_footer .social {
+  /* text-align: right; */
+}
+#main_footer .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-top: 22px;
+  color: inherit;
+  opacity: 0.75;
+}
+#main_footer .social > a:hover {
+  opacity: 0.9;
+}
+#main_footer #copyright {
+  line-height: 1.6;
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.6;
+}
+/* Top버튼 */
+#top_button{
+  position: fixed;
+  right: 20px; bottom: 20px;
+}
+#top_button i{
+  font-size: 30px;
+  color: #FFCD00;
+}
+

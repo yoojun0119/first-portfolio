@@ -1,0 +1,455 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+body {
+  padding: 0; margin: 0;
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+#container{
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+/* Header */
+#main_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  box-shadow: 0px 20px 20px -28px gray;
+}
+#header_logo_section{
+  padding-left: 12px;
+}
+#header_menu_section ul{
+  display: flex;
+  padding: 0;
+}
+#header_menu_section li{
+  padding: 8px 12px;
+}
+#header_menu_section li a{
+  color: gray;
+}
+#header_menu_section li a:hover{
+  color: black;
+}
+#header_login_section{
+	width: 130px;
+  	padding: 8px 0px;
+  	padding-right: 10px;
+  	text-align: right;
+}
+#header_login_section > div{
+	text-align: right;
+  padding-bottom: 3px;
+  padding-right: 3px;
+}
+#header_login_section i:first-child{
+  padding-right: 5px;
+}
+#header_login_section a input{
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+  font-size: 10px;
+  border: none;
+  padding: 5px;
+}
+
+/* Contents */
+#main_section{
+
+}
+#main_section .page{
+  width: 100%;
+  height: 100vh;
+}
+.page #page1_contents{
+  height: 50%;
+  position: relative;
+}
+#page1_contents .bx-wrapper{
+	height: 90%;
+	margin: 0 auto;
+    margin-top: 25px;
+}
+#page1_contents .bx-viewport{
+	height: 100%;
+}
+#page1_contents .slider{
+	height: 100%;
+}
+#page1_contents .slider_contetns{
+	height: 100%;
+}
+#page1_contents .slide_img{
+	width: 100%;
+	object-fit: cover;
+ 	position: absolute;
+ 	top: 50%; left: 50%;
+ 	transform: translate(-50%, -50%);
+}
+#page1_contents .bx-controls{
+	width: 100%;
+	position: absolute;
+	text-align: center;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#page1_contents .bx-pager div{
+	display: inline-block;
+	padding: 5px;
+}
+#page1_contents .bx-pager a{
+	display: block;
+	width: 24px;
+	height: 3px;
+	background-color: #999;
+	font-size: 0;
+	color: transparent;
+}
+#page1_contents .bx-pager a.active{
+	background-color: #000;
+}
+
+#page1_contents .text_background{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff60;
+  width: 80%; height: 80%;
+}
+#page1_contents .wrap_contents{
+  text-align: center;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+#page1_contents .wrap_contents a{
+	z-index: 100;
+}
+#page1_contents .wrap_contents p{
+	font-family: 'GmarketSansMedium';
+  	font-weight: bolder;
+  	font-size: 20px;
+}
+#page1_contents .wrap_contents button{
+  font-family:'Pretendard-Regular', '나눔스퀘어', serif;
+  border: none;
+  padding: 10px;
+  background-color: #FFCD00;
+  cursor: pointer;
+}
+#page1_contents .wrap_contents input:hover{
+  background-color: #EEBE00;
+}
+
+.page #page2_contents{
+  height: 50%;
+  text-align: center;
+}
+.page #page2_contents h3{
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 0;
+  font-size: 17px;
+}
+#page2_wrap{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page2_wrap .page2_feature{
+  width: 30%;
+  height: 100%;
+  margin: 0px 30px;
+  text-align: center;
+}
+#page2_wrap .feature_image_section{
+ 	width: 50%;
+	position: relative;
+}
+#page2_wrap .feature_image_section::after{
+ 	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+#page2_wrap .page2_feature img{
+  	position:absolute;
+	width: 100%;
+	height: 100%;
+}
+#page2_wrap .feature_description p{
+  	font-size: 14px;
+}
+
+.page #page3_contents{
+  height: 60%;
+  position: relative;
+}
+.page #page4_contents{
+  height: 40%;
+  position: relative;
+  margin-top: 50px;
+}
+#top_view_recipe{
+  width: 100%;
+  height: 100%;
+}
+#top_view_recipe .bx-wrapper{
+  margin: 0 auto;
+}
+#top_view_recipe .slider2_content{
+  margin: 10px 0;
+}
+#top_view_recipe h3{
+  margin: 0;
+}
+#top_view_recipe h3 span{
+  color: #FFCD00;
+}
+#top_view_recipe ul{
+  padding: 0;
+  height: 45%;
+  margin-left: 30px;
+}
+#top_view_recipe li{
+  width: 17%;
+  height: 100%;
+  margin: 10px 10px;
+  position: relative;
+  display: inline-block;
+}
+#top_view_recipe .ranking_num {
+  position: absolute;
+  width: 20%;
+  background: #fff;
+  border: 1px solid #bbb;
+  text-align: center;
+  line-height: 1;
+  padding: 7px 7px;
+  margin: 0 0 10px;
+  vertical-align: unset;
+}
+#top_view_recipe .recipe_image_section{
+	width: 100%;
+	position: relative;
+}
+#top_view_recipe .recipe_image_section::after{
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+#top_view_recipe .recipe_image_section img{
+	position:absolute;
+	width: 100%;
+	height: 100%;
+}
+#top_view_recipe .recipe_caption{
+  height: 18%;
+  padding: 0 5px;
+}
+#top_view_recipe .recipe_caption_title{
+  text-align: center;
+  margin-top: 5px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#top_view_recipe .recipe_caption_info{
+  font-size: 12px;
+}
+#top_view_recipe .recipe_caption_info_star img{
+  width: 12px;
+  height: 12px;
+}
+#top_view_recipe .recipe_caption_info_recommand{
+
+}
+#top_view_recipe .recipe_caption_info_rCnt{
+  float: right;
+  vertical-align: middle;
+}
+
+#random_recipe{
+  width: 100%;
+  height: 100%;
+}
+#random_recipe .bx-wrapper{
+  margin: 0 auto;
+  height: 100%;
+  margin-top: 26px;
+  position: relative;
+}
+#random_recipe .bx-viewport{
+  height: 100%;
+}
+#random_recipe .slider2{
+  height: 100%;
+}
+#random_recipe .slider2_content{
+  height: 100%;
+}
+#random_recipe h3{
+  margin: 0;
+}
+#random_recipe .recipe_image_section{
+ 	width: 100%;
+	position: relative;
+}
+#random_recipe .recipe_image_section::after{
+  	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+#random_recipe .recipe_image_section img{
+ 	position:absolute;
+	width: 100%;
+	height: 100%;
+}
+#random_recipe .recipe_caption{
+  height: 18%;
+  padding: 0 5px;
+}
+#random_recipe .recipe_caption_title{
+  text-align: center;
+  margin-top: 5px;
+  font-size: 20px;
+  text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#random_recipe .recipe_caption_info{
+  font-size: 12px;
+}
+#random_recipe .recipe_caption_info_star img{
+  width: 12px;
+  height: 12px;
+}
+#random_recipe .recipe_caption_info_recommand{
+
+}
+#random_recipe .recipe_caption_info_rCnt{
+  float: right;
+  vertical-align: middle;
+}
+#random_recipe i{
+  display: none;
+}
+#random_recipe .bx-controls-direction{
+  font-size: 100px;
+}
+#random_recipe .bx-controls-direction a{
+  position: absolute;
+  top: 41%;
+  display: block;
+  width: 100px; height: 110px;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: #5a5a5a;
+}
+#random_recipe .bx-prev{
+  left: -100px;
+}
+#random_recipe .bx-next{
+  right: -100px;
+}
+#random_recipe .bx-prev::before{
+  content: "\e93d";
+  font-family: 'xeicon';
+}
+#random_recipe .bx-next::before{
+  content: "\e940";
+  font-family: 'xeicon';
+}
+
+/* Footer */
+#main_footer{
+  height: 150px;
+  padding: 50px 0;
+  margin-top: 200px;
+  color: #4b4c4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main_footer #footer_list{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#main_footer .footer_list_contents{
+  display: inline-block;
+  text-align: center;
+}
+#main_footer p {
+  font-size: 14px;
+}
+#main_footer ul {
+  line-height: 1.6;
+  font-size: 12px;
+  padding-left: 0px;
+}
+#main_footer ul a {
+  opacity: 0.8;
+}
+#main_footer ul a:hover {
+  opacity: 1;
+}
+#main_footer .social {
+  /* text-align: right; */
+}
+#main_footer .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-top: 22px;
+  color: inherit;
+  opacity: 0.75;
+}
+#main_footer .social > a:hover {
+  opacity: 0.9;
+}
+#main_footer #copyright {
+  line-height: 1.6;
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.6;
+}
+/* Top버튼 */
+#top_button{
+  position: fixed;
+  right: 20px; bottom: 20px;
+}
+#top_button i{
+  font-size: 30px;
+  color: #FFCD00;
+}
